@@ -134,3 +134,11 @@ function loadLayout() {
     cell.appendChild(block);
   });
 }
+function exportLayout() {
+  html2canvas(document.getElementById('grid')).then(canvas => {
+    const link = document.createElement('a');
+    link.download = 'spiritfarer-layout.png';
+    link.href = canvas.toDataURL();
+    link.click();
+  });
+}
