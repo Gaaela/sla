@@ -59,3 +59,17 @@ button:hover {
   color: #333;
   text-align: left;
 }
+header {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  font-size: 32px;
+  color: #37474f;
+}
+
+header p {
+  font-size: 18px;
+  color: #607d8b;
+}
