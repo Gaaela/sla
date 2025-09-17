@@ -46,6 +46,9 @@ button {
   border-radius: 5px;
   cursor: pointer;
   margin: 5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
 
 button:hover {
