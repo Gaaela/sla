@@ -1,0 +1,21 @@
+body {
+  font-family: sans-serif;
+  text-align: center;
+  background-color: #f0f0f0;
+}
+
+#grid {
+  display: grid;
+  grid-template-columns: repeat(20, 40px);
+  grid-template-rows: repeat(10, 40px);
+  gap: 2px;
+  margin: 20px auto;
+  width: fit-content;
+}
+
+.cell {
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
