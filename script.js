@@ -75,3 +75,62 @@ document.querySelectorAll('.cell').forEach(cell => {
     targetCell.appendChild(block);
   });
 });
+function resetGrid() {
+  document.querySelectorAll('.cell').forEach(cell => {
+    cell.innerHTML = '';
+  });
+}
+
+function saveLayout() {
+  const layout = [];
+
+  document.querySelectorAll('.cell').forEach(cell => {
+    if (cell.children.length > 0) {
+      const block = cell.children[0];
+      layout.push({
+        row: cell.dataset.row,
+        col: cell.dataset.col,
+        text: block.innerText,
+        color: block.style.backgroundColor,
+        width: block.style.width,
+        height: block.style.height
+      });
+    }
+  });
+
+  localStorage.setItem('spiritfarerLayout', JSON.stringify(layout));
+  alert('Layout salvo com sucesso!');
+}
+
+function loadLayout() {
+  resetGrid();
+
+  const layout = JSON.parse(localStorage.getItem('spiritfarerLayout'));
+  if (!layout) {
+    alert('Nenhum layout salvo encontrado.');
+    return;
+  }
+
+  layout.forEach(item => {
+    const cell = document.querySelector(`.cell[data-row="${item.row}"][data-col="${item.col}"]`);
+    const block = document.createElement('div');
+    block.style.position = 'absolute';
+    block.style.width = item.width;
+    block.style.height = item.height;
+    block.style.backgroundColor = item.color;
+    block.style.border = '2px solid #000';
+    block.innerText = item.text;
+    block.style.color = '#000';
+    block.style.fontSize = '12px';
+    block.style.textAlign = 'center';
+    block.style.lineHeight = item.height;
+
+    block.addEventListener('click', () => {
+      if (confirm('Remover esta construção?')) {
+        block.remove();
+      }
+    });
+
+    cell.appendChild(block);
+  });
+}
