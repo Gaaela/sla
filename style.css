@@ -51,3 +51,11 @@ button {
 button:hover {
   background-color: #ffa726;
 }
+.category {
+  font-weight: bold;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-size: 16px;
+  color: #333;
+  text-align: left;
+}
