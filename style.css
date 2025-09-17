@@ -19,3 +19,18 @@ body {
   background-color: #fff;
   border: 1px solid #ccc;
 }
+#buildings {
+  margin: 20px auto;
+  width: fit-content;
+}
+
+.building {
+  padding: 10px;
+  margin: 5px;
+  border: 2px solid #333;
+  cursor: grab;
+  display: inline-block;
+  color: #000;
+  font-size: 14px;
+  text-align: center;
+}
